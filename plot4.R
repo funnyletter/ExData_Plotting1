@@ -2,8 +2,10 @@ source('get_data.R')
 
 myurl <- "https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip"
 
+# Get data using function from get_data.R
 mydata <- get_data(myurl)
 
+# Open PNG device, set size
 png('plot4.png', width = 480, height = 480)
 
 # Set up 2x2 layout
@@ -32,4 +34,5 @@ plot(range(mydata$Timestamp), range(mydata$Global_reactive_power), type = "n", x
      ylab = "Global_reactive_power")
 lines(mydata$Timestamp, mydata$Global_reactive_power)
 
+# Close PNG device
 dev.off()

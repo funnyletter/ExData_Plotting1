@@ -1,8 +1,7 @@
 library(lubridate)
 library(dplyr)
 
-myurl <- "https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip"
-
+# Function to download, format, and filter data for plotting; can be reused in plotting scripts
 get_data <- function(url) {
   temp <- tempfile()
   download.file(url, temp)
